@@ -1,0 +1,48 @@
+/* ====================================================== */
+/* === Sections                                       === */
+/* ====================================================== */
+
+section {
+    width: 100%;
+    background-color: #fff;
+}
+
+#banner {
+    padding: 0;
+    height: calc(100vh - 166px);
+    min-height: 530px;
+
+    @include medium {
+        height: calc(100vh - 110px);
+        min-height: 589px;
+    }
+}
+
+#about {
+    background-color: $color-primary;
+    color: #fff;
+
+    @include large {
+        background-image: url('../../images/branded.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        background-position-y: center;
+    }
+}
+
+#latest {
+    padding-top: 0;
+}
+
+#clients {
+    @include small {
+        display: none;
+    }
+}
+
+#newsletter {
+    padding: 0 15px;
+    color: $color-primary;
+    background-color: $color-tertiary;
+}

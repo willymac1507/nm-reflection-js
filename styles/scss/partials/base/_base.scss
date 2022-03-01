@@ -1,0 +1,33 @@
+/* ====================================================== */
+/* === Base Styles                                    === */
+/* ====================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.42857143;
+    margin: 0;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.4px;
+}
+
+a {
+    text-decoration: none;
+    color: $color-primary;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+h1 {
+    line-height: 1.1;
+}

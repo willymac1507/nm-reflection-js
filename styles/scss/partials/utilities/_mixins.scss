@@ -1,0 +1,163 @@
+// New all-encompassing container for sections
+@mixin section-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 50px 15px;
+
+    @include medium {
+        max-width: $container-med;
+        margin: 0 auto;
+    }
+
+    @include large {
+        max-width: $container-large;
+    }
+
+    @include xlarge {
+        max-width: $container-xlarge;
+    }
+}
+
+// Page container flex attributes
+@mixin page-container {
+    width: calc(100vw - 30px);
+
+    @include medium {
+        width: $container-med;
+        margin: 0 auto;
+    }
+
+    @include large {
+        width: $container-large;
+    }
+
+    @include xlarge {
+        width: $container-xlarge;
+    }
+}
+
+// Header container flex attributes
+@mixin header-container($grow, $shrink, $basis, $direction) {
+    display: flex;
+    flex: $grow $shrink $basis;
+    align-items: center;
+    height: 100%;
+    justify-items: $direction;
+}
+
+// Center all flex items
+@mixin flexy-center {
+    display: flex;
+    align-items: center;
+}
+
+// Main section layout container
+@mixin layout-div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+}
+
+// Card container
+@mixin card {
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+// Image hover effects
+@mixin colorize {
+    .img--greyscale {
+        display: none;
+    }
+    .img--coloured {
+        display: initial;
+    }
+}
+
+// Colors
+@mixin service($colors, $icons) {
+
+    @each $theme,
+    $color in $colors {
+        &--#{$theme} {
+            .services__icon-container {
+                background-color: $color;
+            }
+
+            .button--services {
+                background-color: $color;
+                }
+
+            &:hover {
+                background-color: $color;
+                color: #fff;
+
+                div {
+                    background-color: #fff;
+                    color: $color;
+                }
+
+                .services__header::after {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    @each $theme,
+    $icon in $icons {
+        &--#{$theme} {
+            .services__icon {
+                &::before {
+                    content: $icon;
+                }
+            }
+        }
+    }
+}
+
+@mixin nav-content($colors, $icons) {
+
+    @each $theme,
+    $color in $colors {
+        &--#{$theme} {
+            .main-nav__icon {
+                color: $color;
+            }
+
+            &:hover {
+                background-color: $color;
+
+                .main-nav__popunder {
+                    background-color: darken($color, 10%);
+                    display: flex;
+                }
+
+                .main-nav__icon {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    @each $theme,
+    $icon in $icons {
+        &--#{$theme} {
+            .main-nav__icon {
+                &::before {
+                    content: $icon;
+                }
+            }
+        }
+    }
+}

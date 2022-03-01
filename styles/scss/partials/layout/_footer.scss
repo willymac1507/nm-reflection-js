@@ -1,0 +1,20 @@
+// ======================================
+//  Footer Styles
+// ======================================
+
+#footer {
+    &__content {
+        background-color: $color-primary;
+        color: #fff;
+    
+        br {
+            @include medium {
+                display: none;
+            }
+        }
+    }
+
+    &__partners {
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,11 @@
+/* ====================================================== */
+/* === Header                                         === */
+/* ====================================================== */
+
+header {
+    @include medium {
+        @include flexy-center;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
